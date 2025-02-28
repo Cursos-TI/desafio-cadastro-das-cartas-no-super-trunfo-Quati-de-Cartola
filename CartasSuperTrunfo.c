@@ -21,7 +21,7 @@ int main() {
     /// Carta 1
     // Estado
     printf("Insira o estado da sua carta (A-H):\n");
-    scanf ("%s", estado1);
+    scanf (" %c", &estado1);
     // Código
     printf("Insira o código da sua carta (01-04):\n");
     scanf ("%s", codigo1);
@@ -44,12 +44,12 @@ int main() {
 
 
     /// Carta 2
-    // Estado
-    printf("Insira o estado da sua segunda carta (A-H):\n");
-    scanf ("%s", estado2);
     // Código
     printf("Insira o código da sua segunda carta (01-04):\n");
     scanf ("%s", codigo2);
+    // Estado
+    printf("Insira o estado da sua segunda carta (A-H):\n");
+    scanf (" %c", &estado2);
     // Nome da cidade
     printf("Insira o nome da cidade de sua segunda carta:\n");
     scanf ("%s", nome_cidade2);
@@ -70,6 +70,6 @@ int main() {
     // Mostrando cartas
     // Primeira Carta:
     printf("Carta 1\n");
-    printf("Estado: %c", estado1);
+    printf("Estado: %c\n", estado1);
     return 0;
 }
