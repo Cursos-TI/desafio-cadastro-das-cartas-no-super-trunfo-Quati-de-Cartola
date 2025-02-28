@@ -45,6 +45,7 @@ int main() {
 
     /// Carta 2
     // Código
+    /*
     printf("Insira o código da sua segunda carta (01-04):\n");
     scanf ("%s", codigo2);
     // Estado
@@ -65,11 +66,17 @@ int main() {
     // PIB
     printf("Insira o PIB da sua segunda carta:\n");
     scanf ("%f", &pib2);
-
+    */
     // Exibição dos Dados das Cartas:
     // Mostrando cartas
     // Primeira Carta:
     printf("Carta 1\n");
     printf("Estado: %c\n", estado1);
+    printf("Código: %c%s\n", estado1, codigo1);
+    printf("Nome da cidade: %s\n", nome_cidade1);
+    printf("População: %d", populacao1);
+    printf("Pontos turísticos: %d", p_turisticos1);
+    printf("Área: %f", area1);
+    printf("PIB: %f", pib1);
     return 0;
 }
