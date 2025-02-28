@@ -46,7 +46,7 @@ int main() {
     /// Carta 2
     // Estado
     printf("Insira o estado da sua segunda carta (A-H):\n");
-    scanf ("%c", &estado2);
+    scanf (" %c", &estado2);
     // Código
     printf("Insira o código da sua segunda carta (01-04):\n");
     scanf ("%s", codigo2);
