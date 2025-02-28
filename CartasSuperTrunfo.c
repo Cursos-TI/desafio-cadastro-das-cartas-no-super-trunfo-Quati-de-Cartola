@@ -74,9 +74,9 @@ int main() {
     printf("Estado: %c\n", estado1);
     printf("Código: %c%s\n", estado1, codigo1);
     printf("Nome da cidade: %s\n", nome_cidade1);
-    printf("População: %d", populacao1);
-    printf("Pontos turísticos: %d", p_turisticos1);
-    printf("Área: %f", area1);
-    printf("PIB: %f", pib1);
+    printf("População: %d\n", populacao1);
+    printf("Pontos turísticos: %d\n", p_turisticos1);
+    printf("Área: %f\n", area1);
+    printf("PIB: %f\n", pib1);
     return 0;
 }
