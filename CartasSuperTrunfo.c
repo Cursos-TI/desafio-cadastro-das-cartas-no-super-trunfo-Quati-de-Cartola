@@ -18,14 +18,27 @@ int main() {
     float  pib1,  pib2;
 
     // Cadastro das Cartas:
+    // Estado
     printf("Insira o estado da sua carta (A-H):\n");
     scanf ("%c", &estado1);
-
+    // Código
     printf("Insira o código da sua carta (01-04):\n");
     scanf ("%s", codigo1);
-
+    // Nome da cidade
     printf("Insira o nome da cidade de sua carta:\n");
     scanf ("%s", nome_cidade1);
+    // População
+    printf("Insira a população da sua carta:\n");
+    scanf ("%d", &populacao1);
+    // Pontos Turísticos
+    printf("Insira a quantidade de pontos turísticos da sua carta:\n");
+    scanf ("%d", &p_turisticos1);
+    // Área
+    printf("Insira a área da sua carta em km²:\n");
+    scanf ("%f", &area1);
+    // PIB
+    printf("Insira o PIB da sua carta:\n");
+    scanf ("%f", &pib1);
 
 
     // Exibição dos Dados das Cartas:
