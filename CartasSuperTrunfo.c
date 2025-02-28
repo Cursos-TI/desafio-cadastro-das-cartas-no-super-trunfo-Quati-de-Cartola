@@ -10,7 +10,7 @@ int main() {
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Definindo minhas variáveis para o desafio
     char   estado1, estado2;
-    char   codigo1[2], codigo2[2];
+    char   codigo1[3], codigo2[3];
     char   nome_cidade1[25], nome_cidade2[25];
     int    populacao1, populacao2;
     int    p_turisticos1, p_turisticos2;
@@ -25,7 +25,7 @@ int main() {
     scanf (" %c", &estado1);
     // Código
     printf("Insira o código da sua carta (01-04):\n");
-    scanf ("%2s", codigo1);
+    scanf ("%s", codigo1);
     // Nome da cidade
     printf("Insira o nome da cidade de sua carta:\n");
     scanf (" %s", nome_cidade1);
