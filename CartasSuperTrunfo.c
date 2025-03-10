@@ -112,7 +112,7 @@ int main() {
     printf("PIB per Capita: %f\n", pib_per_capita2);
 
 
-    // Imprimindo resultado
+    // Imprimindo resultado - desafio mestre (primeiro módulo)
     printf("Resultado===========================\n");
     // Resultado população
     resultado = populacao1 > populacao2;
