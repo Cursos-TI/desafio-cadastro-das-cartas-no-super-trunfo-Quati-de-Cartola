@@ -114,24 +114,33 @@ int main() {
 
     // Imprimindo resultado - desafio mestre (primeiro módulo)
     printf("Resultado===========================\n");
-    // Resultado população
-    resultado = populacao1 > populacao2;
-    printf("População: Carta (%i)\n", resultado);
-    // Resultado Pontos Turisticos
-    resultado = p_turisticos1 > p_turisticos2;
-    printf("Pontos turísticos: Carta (%i)\n", resultado);
-    // Resultado Área
-    resultado = area1 > area2;
-    printf("Área: Carta (%i)\n", resultado);
-    // Resultado PIB
-    resultado = pib1 > pib2;
-    printf("PIB: Carta (%i)\n", resultado);
-    // Resultado densidade populacional
-    resultado = densidade_populacional1 < densidade_populacional2;
-    printf("Densidade Populacional: Carta (%i)\n", resultado);
-    // Resultado renda per Capita PIB
-    resultado = pib_per_capita1 < pib_per_capita2;
-    printf("PIB per Capita: Carta (%i)\n", resultado);
+    // Vamos identificar se os atributos da carta um ganham da carta dois
+    // Começando pela população
+    if (populacao1 > populacao2)
+    {
+        printf("Carta %s ganhou em população da Carta %s\n", nome_cidade1, nome_cidade2);
+    } else
+    {
+        printf("Carta %s ganhou em população da Carta %s\n", nome_cidade2, nome_cidade1);
+    }
+    // Pontos turisticos
+    printf("===================\n");
+    if (p_turisticos1 > p_turisticos1)
+    {
+        printf("Carta %s ganhou em quantidade de pontos turísticos da Carta %s\n", nome_cidade1, nome_cidade2);
+    } else
+    {
+        printf("Carta %s ganhou em quantidade de pontos turísticos da Carta %s\n", nome_cidade2, nome_cidade1);
+    }
+    // Área
+    printf("===================\n");
+    if (area1 > area2)
+    {
+        printf("Carta %s ganhou em tamanho de área da Carta %s\n", nome_cidade1, nome_cidade2);
+    } else
+    {
+        printf("Carta %s ganhou em tamanho de área da Carta %s\n", nome_cidade2, nome_cidade1);
+    }
 
     return 0;
 }
