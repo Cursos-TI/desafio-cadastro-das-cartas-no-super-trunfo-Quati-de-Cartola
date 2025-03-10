@@ -17,6 +17,9 @@ int main() {
     float  area1, area2;
     float  pib1,  pib2;
     char   codigo_completo1[50], codigo_completo2[50];
+    // Para o desafio do Nível Aventureiro
+    float densidade_populacional1, densidade_populacional2;
+    float pib_per_capita1, pib_per_capita2;
 
     //// Cadastro das Cartas:
     /// Carta 1
@@ -44,6 +47,8 @@ int main() {
 
     // Configurando código completo
     sprintf(codigo_completo1, "%c%s", estado1, codigo1);
+    densidade_populacional1 = populacao1 / area1;
+    pib_per_capita1 = pib1 / populacao1;
 
     //// Cadastro das Cartas:
     /// Carta 2
@@ -71,6 +76,8 @@ int main() {
 
     // Configurando código completo
     sprintf(codigo_completo2, "%c%s", estado2, codigo2);
+    densidade_populacional2 = populacao2 / area2;
+    pib_per_capita2 = pib2 / populacao2;
 
     // Exibição dos Dados das Cartas:
     // Mostrando cartas
@@ -83,6 +90,8 @@ int main() {
     printf("Pontos turísticos: %d\n", p_turisticos1);
     printf("Área: %f\n", area1);
     printf("PIB: %f\n", pib1);
+    printf("Densidade Populacional: %f\n", densidade_populacional1);
+    printf("PIB per Capita: %f\n", pib_per_capita1);
     // Segunda Carta:
     printf("Carta 2\n");
     printf("Estado: %c\n", estado2);
@@ -92,5 +101,7 @@ int main() {
     printf("Pontos turísticos: %d\n", p_turisticos2);
     printf("Área: %f\n", area2);
     printf("PIB: %f\n", pib2);
+    printf("Densidade Populacional: %f\n", densidade_populacional2);
+    printf("PIB per Capita: %f\n", pib_per_capita2);
     return 0;
 }
