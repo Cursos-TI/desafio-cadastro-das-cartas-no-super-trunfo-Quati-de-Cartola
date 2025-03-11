@@ -23,6 +23,8 @@ int main() {
     // Para o desafio Nível Avançado
     float super_poder1, super_poder2;
     int resultado;
+    // Para Switch de escolha de qual atributo será usado para o combate
+    int escolhaJogador;
 
     //// Cadastro das Cartas:
     /// Carta 1
@@ -111,36 +113,81 @@ int main() {
     printf("Densidade Populacional: %f\n", densidade_populacional2);
     printf("PIB per Capita: %f\n", pib_per_capita2);
 
+    // Menu interativo
+    printf("=======================================\n");
+    printf("Escolha qual atributo as cartas batalharão:\n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Nº de pontos turísticos\n");
+    printf("5. Densidade Demográfica\n");
+    scanf("%d", &escolhaJogador);
+    printf("=======================================\n");
+    printf("### RESULTADO\n");
+    // Fazendo um Switch para que o jogador possa escolher qual atributo será escolhido
+    switch (escolhaJogador)
+    {
+        case 1: // Escolheu População
+        //////////////////////////////////////////////////////////////
+            // Imprimindo resultado
+            // Vamos identificar se os atributos da carta um ganham da carta dois
+            // Começando pela população
+            if (populacao1 > populacao2)
+            {
+                printf("Carta %s ganhou em população da Carta %s\n", nome_cidade1, nome_cidade2);
+            } else
+            {
+                printf("Carta %s ganhou em população da Carta %s\n", nome_cidade2, nome_cidade1);
+            }
+        break;
 
-    // Imprimindo resultado - desafio mestre (primeiro módulo)
-    printf("Resultado===========================\n");
-    // Vamos identificar se os atributos da carta um ganham da carta dois
-    // Começando pela população
-    if (populacao1 > populacao2)
-    {
-        printf("Carta %s ganhou em população da Carta %s\n", nome_cidade1, nome_cidade2);
-    } else
-    {
-        printf("Carta %s ganhou em população da Carta %s\n", nome_cidade2, nome_cidade1);
-    }
-    // Pontos turisticos
-    printf("===================\n");
-    if (p_turisticos1 > p_turisticos1)
-    {
-        printf("Carta %s ganhou em quantidade de pontos turísticos da Carta %s\n", nome_cidade1, nome_cidade2);
-    } else
-    {
-        printf("Carta %s ganhou em quantidade de pontos turísticos da Carta %s\n", nome_cidade2, nome_cidade1);
-    }
-    // Área
-    printf("===================\n");
-    if (area1 > area2)
-    {
-        printf("Carta %s ganhou em tamanho de área da Carta %s\n", nome_cidade1, nome_cidade2);
-    } else
-    {
-        printf("Carta %s ganhou em tamanho de área da Carta %s\n", nome_cidade2, nome_cidade1);
-    }
+        case 2: // Escolheu Área
+        //////////////////////////////////////////////////////////////
+             // Área
+            if (area1 > area2)
+            {
+                printf("Carta %s ganhou em tamanho de área da Carta %s\n", nome_cidade1, nome_cidade2);
+            } else
+            {
+                printf("Carta %s ganhou em tamanho de área da Carta %s\n", nome_cidade2, nome_cidade1);
+            }
+        break;
 
+        case 3: // Escolheu PIB
+        ///////////////////////////////////////////////////////////////
+            // PIB
+            if (pib1 > pib2)
+            {
+                printf("Carta %s ganhou em PIB da Carta %s\n", nome_cidade1, nome_cidade2);
+            } else
+            {
+                printf("Carta %s ganhou em PIB da Carta %s\n", nome_cidade2, nome_cidade1);
+            }
+        break;
+
+        case 4: // Escolheu Pontos Turísticos
+        ///////////////////////////////////////////////////////////////
+            // p_turisticos
+            if (p_turisticos1 > p_turisticos2)
+            {
+                printf("Carta %s ganhou em quantidade de pontos turísticos da Carta %s\n", nome_cidade1, nome_cidade2);
+            } else
+            {
+                printf("Carta %s ganhou em quantidade de pontos turísticos da Carta %s\n", nome_cidade2, nome_cidade1);
+            }
+        break;
+
+        case 5: // Densidade demográfica
+        ///////////////////////////////////////////////////////////////
+            // densidade demográfica
+            if (densidade_populacional1 < densidade_populacional2)
+            {
+                printf("Carta %s ganhou em densidade demográfica da Carta %s\n", nome_cidade1, nome_cidade2);
+            } else
+            {
+                printf("Carta %s ganhou em densidade demográfica da Carta %s\n", nome_cidade2, nome_cidade1);
+            }
+        break;
+    }
     return 0;
 }
