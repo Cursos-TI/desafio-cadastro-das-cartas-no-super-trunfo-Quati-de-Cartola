@@ -25,8 +25,8 @@ int main() {
     int resultado1, resultado2;
     // Para Switch de escolha de qual atributo será usado para o combate
     int escolhaJogador, escolhaJogador2;
-    // Para saída de jogo
-    char atributo1, atributo2;
+    // Para saída de jogo e identificação do atributo escolhido do jogador
+    char atributo1[20], atributo2[20];
 
     //// Cadastro das Cartas:
     /// Carta 1
@@ -150,35 +150,30 @@ int main() {
                 // Vamos identificar se os atributos da carta um ganham da carta dois
                 // Começando pela população
                 resultado1 = (populacao1 > populacao2) ? 1 : 0;
-                atributo1 = "População";
             break;
 
             case 2: // Escolheu Área
             //////////////////////////////////////////////////////////////
                 // Área
                 resultado1 = (area1 > area2) ? 1 : 0;
-                atributo1 = "Área";
             break;
 
             case 3: // Escolheu PIB
             ///////////////////////////////////////////////////////////////
                 // PIB
                 resultado1 = (pib1 > pib2) ? 1 : 0;
-                atributo1 = "PIB";
             break;
 
             case 4: // Escolheu Pontos Turísticos
             ///////////////////////////////////////////////////////////////
                 // p_turisticos
                 resultado1 = (p_turisticos1 > p_turisticos2) ? 1 : 0;
-                atributo1 = "Pontos Turísticos";
             break;
 
             case 5: // Densidade demográfica
             ///////////////////////////////////////////////////////////////
                 // densidade demográfica
                 resultado1 = (densidade_populacional1 < densidade_populacional2) ? 1 : 0;
-                atributo1 = "Densidade Populacional";
             break;
         }
 
@@ -191,42 +186,46 @@ int main() {
                 // Vamos identificar se os atributos da carta um ganham da carta dois
                 // Começando pela população
                 resultado2 = (populacao1 > populacao2) ? 1 : 0;
-                atributo2 = "População";
             break;
 
             case 2: // Escolheu Área
             //////////////////////////////////////////////////////////////
                 // Área
                 resultado2 = (area1 > area2) ? 1 : 0;
-                atributo2 = "Área";
             break;
 
             case 3: // Escolheu PIB
             ///////////////////////////////////////////////////////////////
                 // PIB
                 resultado2 = (pib1 > pib2) ? 1 : 0;
-                atributo2 = "PIB";
             break;
 
             case 4: // Escolheu Pontos Turísticos
             ///////////////////////////////////////////////////////////////
                 // p_turisticos
                 resultado2 = (p_turisticos1 > p_turisticos2) ? 1 : 0;
-                atributo2 = "Pontos Turísticos";
             break;
 
             case 5: // Densidade demográfica
             ///////////////////////////////////////////////////////////////
                 // densidade demográfica
                 resultado2 = (densidade_populacional1 < densidade_populacional2) ? 1 : 0;
-                atributo2 = "Densidade Populacional";
             break;
         }
         ///////////////////////////////////////////////////////////////////
         // Imprimindo as respostas
         // Começando pelo atributo 1
-        printf("Guerra entre Carta %s e Carta %s no atributo %s!\n", codigo_completo1, codigo_completo2, atributo1);
+        printf("Guerra entre Carta %s e Carta %s no atributo 1!\n", codigo_completo1, codigo_completo2);
         if (resultado1 == 1)
+        {
+            printf("Carta %s ganhou da Carta %s!\n", codigo_completo1, codigo_completo2);
+        } else
+        {
+            printf("Carta %s ganhou da Carta %s!\n", codigo_completo2, codigo_completo1);
+        }
+        // Atributo 2
+        printf("Guerra entre Carta %s e Carta %s no atributo 2!\n", codigo_completo1, codigo_completo2);
+        if (resultado2 == 1)
         {
             printf("Carta %s ganhou da Carta %s!\n", codigo_completo1, codigo_completo2);
         } else
