@@ -254,6 +254,8 @@ int main() {
     printf("Carta %s somando os atributos: %d\n", codigo_completo1, atributo1);
     printf("Carta %s somando os atributos: %d\n", codigo_completo2, atributo2);
     printf("==========================================================\n");
+    
+    printf("Qual soma de atributos é maior?\n")
     // SE o atributo 1 é maior que o atributo 2
     if (atributo1 > atributo2)
     {
