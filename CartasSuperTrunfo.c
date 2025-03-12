@@ -26,7 +26,7 @@ int main() {
     // Para Switch de escolha de qual atributo será usado para o combate
     int escolhaJogador, escolhaJogador2;
     // Para saída de jogo e identificação do atributo escolhido do jogador
-    char atributo1[20], atributo2[20];
+    int atributo1, atributo2;
 
     //// Cadastro das Cartas:
     /// Carta 1
@@ -125,113 +125,149 @@ int main() {
     printf("5. Densidade Demográfica\n");
     // Escolhendo o primeiro atributo
     scanf("%d", &escolhaJogador);
-    // Escolhendo o segundo
-    printf("Escolha o segundo atributo:\n");
-    scanf("%d", &escolhaJogador2);
 
-    // Garantindo que o jogador não possa escolher o mesmo atributo duas vezes
-    if (escolhaJogador2 == escolhaJogador)
+    ///////////////////////////////////////////////////////////////////////////////////////
+    printf("=======================================\n");
+    printf("### RESULTADO\n");
+    // Fazendo um Switch para que o jogador possa escolher qual atributo será escolhido
+    switch (escolhaJogador)
     {
-        // Mostrando mensagem que isso não é permitido
-        printf("Você escolheu o mesmo atributo!\n");
-        printf("Isso não é permitido, por favor, escolha outro número:\n");
-        scanf("%d", &escolhaJogador2);
-    } else // Continuamos o código.............................................................
+        case 1: // Escolheu População
+        //////////////////////////////////////////////////////////////
+            // Guardando em uma variável resultado1 o valor dela
+            resultado1 = populacao1;
+            resultado2 = populacao2;
+            printf("=======================================\n");
+            printf("Escolha qual é o segundo atributo que as cartas batalharão:\n");
+            printf("X. População\n");
+            printf("2. Área\n");
+            printf("3. PIB\n");
+            printf("4. Nº de pontos turísticos\n");
+            printf("5. Densidade Demográfica\n");
+            scanf("%d", &escolhaJogador2);
+        break;
+
+        case 2: // Escolheu Área
+        //////////////////////////////////////////////////////////////
+            // Área
+            resultado1 = area1;
+            resultado2 = area2;
+            printf("=======================================\n");
+            printf("Escolha qual é o segundo atributo que as cartas batalharão:\n");
+            printf("1. População\n");
+            printf("X. Área\n");
+            printf("3. PIB\n");
+            printf("4. Nº de pontos turísticos\n");
+            printf("5. Densidade Demográfica\n");
+            scanf("%d", &escolhaJogador2);
+        break;
+
+        case 3: // Escolheu PIB
+        ///////////////////////////////////////////////////////////////
+            // PIB
+            resultado1 = pib1;
+            resultado2 = pib2;
+            printf("=======================================\n");
+            printf("=======================================\n");
+            printf("Escolha qual é o segundo atributo que as cartas batalharão:\n");
+            printf("1. População\n");
+            printf("2. Área\n");
+            printf("X. PIB\n");
+            printf("4. Nº de pontos turísticos\n");
+            printf("5. Densidade Demográfica\n");
+            scanf("%d", &escolhaJogador2);
+        break;
+
+        case 4: // Escolheu Pontos Turísticos
+        ///////////////////////////////////////////////////////////////
+            // p_turisticos
+            resultado1 = p_turisticos1;
+            resultado2 = p_turisticos2;
+            printf("=======================================\n");
+            printf("Escolha qual é o segundo atributo que as cartas batalharão:\n");
+            printf("X. População\n");
+            printf("2. Área\n");
+            printf("3. PIB\n");
+            printf("X. Nº de pontos turísticos\n");
+            printf("5. Densidade Demográfica\n");
+            scanf("%d", &escolhaJogador2);
+        break;
+
+        case 5: // Densidade demográfica
+        ///////////////////////////////////////////////////////////////
+            // densidade demográfica
+            resultado1 = densidade_populacional1;
+            resultado2 = densidade_populacional2;
+            printf("=======================================\n");
+            printf("Escolha qual é o segundo atributo que as cartas batalharão:\n");
+            printf("X. População\n");
+            printf("2. Área\n");
+            printf("3. PIB\n");
+            printf("4. Nº de pontos turísticos\n");
+            printf("X. Densidade Demográfica\n");
+            scanf("%d", &escolhaJogador2);
+            
+        break;
+    }
+    // Fazendo um Switch para que o jogador possa escolher qual foi o segundo atributo escolhido
+    switch (escolhaJogador2)
     {
-        ///////////////////////////////////////////////////////////////////////////////////////
-        printf("=======================================\n");
-        printf("### RESULTADO\n");
-        // Fazendo um Switch para que o jogador possa escolher qual atributo será escolhido
-        switch (escolhaJogador)
-        {
-            case 1: // Escolheu População
-            //////////////////////////////////////////////////////////////
-                // Imprimindo resultado
-                // Vamos identificar se os atributos da carta um ganham da carta dois
-                // Começando pela população
-                resultado1 = (populacao1 > populacao2) ? 1 : 0;
-            break;
+        case 1: // Escolheu População
+        //////////////////////////////////////////////////////////////
+            // Imprimindo resultado
+            // Vamos identificar se os atributos da carta um ganham da carta dois
+            // Começando pela população
+            atributo1 = resultado1 + populacao1;
+            atributo2 = resultado2 + populacao2;
+        break;
 
-            case 2: // Escolheu Área
-            //////////////////////////////////////////////////////////////
-                // Área
-                resultado1 = (area1 > area2) ? 1 : 0;
-            break;
+        case 2: // Escolheu Área
+        //////////////////////////////////////////////////////////////
+            // Área
+            atributo1 = resultado1 + area1;
+            atributo2 = resultado2 + area2;
+        break;
 
-            case 3: // Escolheu PIB
-            ///////////////////////////////////////////////////////////////
-                // PIB
-                resultado1 = (pib1 > pib2) ? 1 : 0;
-            break;
+        case 3: // Escolheu PIB
+        ///////////////////////////////////////////////////////////////
+            // PIB
+            atributo1 = resultado1 + pib1;
+            atributo2 = resultado2 + pib2;
+        break;
 
-            case 4: // Escolheu Pontos Turísticos
-            ///////////////////////////////////////////////////////////////
-                // p_turisticos
-                resultado1 = (p_turisticos1 > p_turisticos2) ? 1 : 0;
-            break;
+        case 4: // Escolheu Pontos Turísticos
+        ///////////////////////////////////////////////////////////////
+            // p_turisticos
+            atributo1 = resultado1 + p_turisticos1;
+            atributo2 = resultado2 + p_turisticos2;
+        break;
 
-            case 5: // Densidade demográfica
-            ///////////////////////////////////////////////////////////////
-                // densidade demográfica
-                resultado1 = (densidade_populacional1 < densidade_populacional2) ? 1 : 0;
-            break;
-        }
-
-        // Fazendo um Switch para que o jogador possa escolher qual foi o segundo atributo escolhido
-        switch (escolhaJogador2)
-        {
-            case 1: // Escolheu População
-            //////////////////////////////////////////////////////////////
-                // Imprimindo resultado
-                // Vamos identificar se os atributos da carta um ganham da carta dois
-                // Começando pela população
-                resultado2 = (populacao1 > populacao2) ? 1 : 0;
-            break;
-
-            case 2: // Escolheu Área
-            //////////////////////////////////////////////////////////////
-                // Área
-                resultado2 = (area1 > area2) ? 1 : 0;
-            break;
-
-            case 3: // Escolheu PIB
-            ///////////////////////////////////////////////////////////////
-                // PIB
-                resultado2 = (pib1 > pib2) ? 1 : 0;
-            break;
-
-            case 4: // Escolheu Pontos Turísticos
-            ///////////////////////////////////////////////////////////////
-                // p_turisticos
-                resultado2 = (p_turisticos1 > p_turisticos2) ? 1 : 0;
-            break;
-
-            case 5: // Densidade demográfica
-            ///////////////////////////////////////////////////////////////
-                // densidade demográfica
-                resultado2 = (densidade_populacional1 < densidade_populacional2) ? 1 : 0;
-            break;
-        }
-        ///////////////////////////////////////////////////////////////////
-        // Imprimindo as respostas
-        // Começando pelo atributo 1
-        printf("Guerra entre Carta %s e Carta %s no atributo 1!\n", codigo_completo1, codigo_completo2);
-        if (resultado1 == 1)
-        {
-            printf("Carta %s ganhou da Carta %s!\n", codigo_completo1, codigo_completo2);
-        } else
-        {
-            printf("Carta %s ganhou da Carta %s!\n", codigo_completo2, codigo_completo1);
-        }
-        // Atributo 2
-        printf("Guerra entre Carta %s e Carta %s no atributo 2!\n", codigo_completo1, codigo_completo2);
-        if (resultado2 == 1)
-        {
-            printf("Carta %s ganhou da Carta %s!\n", codigo_completo1, codigo_completo2);
-        } else
-        {
-            printf("Carta %s ganhou da Carta %s!\n", codigo_completo2, codigo_completo1);
-        }
+        case 5: // Densidade demográfica
+        ///////////////////////////////////////////////////////////////
+            // densidade demográfica
+            atributo1 = resultado1 + densidade_populacional1;
+            atributo2 = resultado2 + densidade_populacional2;
+        break;
+    }
+    ///////////////////////////////////////////////////////////////////
+    // Imprimindo as respostas
+    printf("==========================================================\n");
+    printf("Carta %s: %d\n", codigo_completo1, atributo1);
+    printf("Carta %s: %d\n", codigo_completo2, atributo2);
+    printf("==========================================================\n");
+    // SE o atributo 1 é maior que o atributo 2
+    if (atributo1 > atributo2)
+    {
+        printf("A Carta %s ganhou da Carta %s!\n", codigo_completo1, codigo_completo2);
+    } else
+    // SE for igual
+    if (atributo1 == atributo2)
+    {
+        printf("A Carta %s empatou com a Carta %s!\n", codigo_completo1, codigo_completo2);
+    } else
+    // SE o atributo 1 é menor que o atributo 2
+    {
+        printf("A Carta %s ganhou da Carta %s!\n", codigo_completo2, codigo_completo1);
     }
     return 0;
 }
