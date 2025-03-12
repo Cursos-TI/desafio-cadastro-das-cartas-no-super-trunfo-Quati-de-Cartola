@@ -249,15 +249,15 @@ int main() {
         break;
     }
     ///////////////////////////////////////////////////////////////////
-    // Imprimindo as respostas
-    printf("==========================================================\n");
-    printf("Carta %s somando os atributos: %d\n", codigo_completo1, atributo1);
-    printf("Carta %s somando os atributos: %d\n", codigo_completo2, atributo2);
-    printf("==========================================================\n");
-    
     printf("### Qual soma de atributos é maior?\n");
     printf("=== %s VS %s\n ===", nome_cidade1, nome_cidade2);
-    
+
+    // Imprimindo as respostas
+    printf("==========================================================\n");
+    printf("Carta %s somando ambos os atributos: %d\n", codigo_completo1, atributo1);
+    printf("Carta %s somando ambos os atributos: %d\n", codigo_completo2, atributo2);
+    printf("==========================================================\n");
+
     // SE o atributo 1 é maior que o atributo 2
     if (atributo1 > atributo2)
     {
