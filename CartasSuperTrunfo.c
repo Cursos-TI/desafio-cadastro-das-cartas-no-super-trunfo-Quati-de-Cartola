@@ -168,7 +168,6 @@ int main() {
             resultado1 = pib1;
             resultado2 = pib2;
             printf("=======================================\n");
-            printf("=======================================\n");
             printf("Escolha qual é o segundo atributo que as cartas batalharão:\n");
             printf("1. População\n");
             printf("2. Área\n");
